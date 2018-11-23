@@ -51,11 +51,11 @@ Vue.component('borrowerpage', {
 
         },
 
-        getCustomer: function(firstname) {
+        getCustomer: function() {
 
             //console.log(firstname)
 
-           return axios.get('/api/borrowers/name/' + firstname).then(function(result){
+           return axios.get('/api/borrowers/name/Andrew').then(function(result){
                 alert(result.status)
             let resultData = result.data
                 console.log(resultData)
