@@ -8,7 +8,7 @@ Vue.component('borrowerpage', {
             lastname: '',
             email: '',
             mobile: '',
-            customer_type: 'borrower',
+            customer_type: 'Borrower',
             customer_data: [],
 
             reference:'',
@@ -52,17 +52,17 @@ Vue.component('borrowerpage', {
         },
 
         getCustomer: function(firstname) {
+            let self = this
 
             //console.log(firstname)
 
-           return axios.get('/api/borrowers/name/' + firstname).then(function(result){
-                alert(result.status)
+           return axios.get('/api/borrowers/name/Andrew').then(function(result){
+                //alert(result.status)
             let resultData = result.data
                 console.log(resultData)
             let customerData = resultData.data
                 console.log(customerData)
 
-                let self = this
 
              
                     self.firstname = customerData[0].firstname,
@@ -122,14 +122,35 @@ Vue.component('borrowerpage', {
     template: `
 
     <div>
-    
-    {{firstname}}
-    {{lastname}}
-    {{mobile}}
-    {{customer_type}}
-    {{email}}
 
-    <div class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Type</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">Loan Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>{{firstname}}</td>
+      <td>{{lastname}}</td>
+      <td>{{mobile}}</td>
+      <td>{{customer_type}}</td>
+      <td>{{email}}</td>
+      <td>R500</td>
+    </tr>
+   
+  </tbody>
+</table>
+    
+
+    <div style = 'margin-left: 200px' class="container">
 	<div class="row">
 		<div class="col-md-9">
 		    <div class="card">
@@ -167,7 +188,7 @@ Vue.component('borrowerpage', {
 
                               <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                  <button v-on:click="createTransaction()" name="submit" type="button" class="btn btn-primary">Update My Profile</button>
+                                  <button v-on:click="createTransaction()" name="submit" type="button" class="btn btn-primary">Confirm Transaction Deatils</button>
                                 </div>
                               </div>
                               <a v-if="payment_url" v-bind:href="payment_url">Pay here</a>  
