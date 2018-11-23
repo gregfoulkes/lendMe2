@@ -44,7 +44,7 @@ let borrowerApi = BorrowerApi(borrowerServices);
 
 
 
-var port = process.env.port || 3007;
+var port = process.env.PORT || 3007;
 app.listen(port, function(){
     console.log('running at port :' , port)
 });
