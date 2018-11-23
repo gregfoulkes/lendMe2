@@ -8,7 +8,7 @@ Vue.component('borrowerpage', {
             lastname: '',
             email: '',
             mobile: '',
-            customer_type: 'borrower',
+            customer_type: 'Borrower',
             customer_data: [],
 
             reference:'',
