@@ -31,9 +31,9 @@
 
     <div id='lendMe'>
 <!-- <img src="/logo.png" alt=""> -->
-            <landingpage v-on:transaction='showTransaction()' v-on:borrow='showBorrower()' v-if='showlanding' ></landingpage>
+            <landingpage  v-on:lender='showLender()' v-on:borrow='showBorrower()' v-if='showlanding' ></landingpage>
             <borrowerpage v-if='showborrower'></borrowerpage>
-            <transaction  v-if='showtransactionpage'> </transaction>
+            <lender v-on:hidelender= 'showlanding = true' v-if='showlender'> </lender>
 
     </div>
    
@@ -48,6 +48,7 @@
 
 <script src='./components/transactionComponent.js'></script>
 
+<script src='./components/lenderComponent.js'></script>
 
 <script src='./js/main.js'></script>
 

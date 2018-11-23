@@ -4,6 +4,7 @@ let app = new Vue ({
     data: {
         showlanding: true,
         showborrower:false,
+        showlender:false,
         showtransactionpage: false
     },
 
@@ -18,8 +19,8 @@ let app = new Vue ({
             this.showborrower = true
         },
 
-        showTransaction: function() {
-            this.showtransactionpage = true
+        showLender: function() {
+            this.showlender = true
 
             this.showlanding = false
         }
