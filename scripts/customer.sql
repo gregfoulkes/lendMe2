@@ -12,7 +12,7 @@ create table customer (
 create table borrowers_table(
     id serial not null PRIMARY KEY,
     customer_id int,
-    amount_owed FLOAT,
+    amount_requested FLOAT,
     trust_rate int,
     FOREIGN KEY(customer_id) REFERENCES customer(id)
 )
