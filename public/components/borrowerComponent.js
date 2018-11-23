@@ -51,7 +51,8 @@ Vue.component('borrowerpage', {
 
         },
 
-        getCustomer: function() {
+        getCustomer: function(firstname) {
+            let self = this
 
             //console.log(firstname)
 
@@ -62,7 +63,6 @@ Vue.component('borrowerpage', {
             let customerData = resultData.data
                 console.log(customerData)
 
-                let self = this
 
              
                     self.firstname = customerData[0].firstname,
