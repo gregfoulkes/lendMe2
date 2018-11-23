@@ -1,0 +1,1 @@
+insert into customer(firstname, lastname, email, mobile, customer_type ) values('Andrew', 'Monamodi','andrew@gmail.com',2779654756,'borrower')
