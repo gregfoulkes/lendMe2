@@ -33,7 +33,7 @@ module.exports = function borrower(pool){
         if(results.rows.length > 0){
             let user = results.rows[0];
             let user_id = user.id;
-            let resultsBalance = await pool.query('select customer.firstname, customer.lastname,customer.mobile, borrowers_table.trust_rate, borrowers_table.amount_owed from borrowers_table join customer on borrowers_table.customer_id = customer.id where customer.id=$1;', [user_id]);
+            let resultsBalance = await pool.query('select customer.firstname, customer.lastname,customer.mobile, customer.email ,borrowers_table.trust_rate, borrowers_table.amount_requested from borrowers_table join customer on borrowers_table.customer_id = customer.id where customer.id=$1;', [user_id]);
             return resultsBalance.rows;
         }     
     }
